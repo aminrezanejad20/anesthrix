@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>آنستریکس</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet">
+  <script src="settings.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Vazirmatn", sans-serif;
+      background: linear-gradient(to bottom right, #eef9f1, #d5f0c1);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #66bb6a;
+      padding: 25px 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      line-height: 1.3;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      padding: 10px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex: 1;
+    }
+
+    .icon-box {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+    }
+
+    .icon-box img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      object-fit: contain;
+    }
+
+    .icon-title {
+      font-size: 15px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: white;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      z-index: 10;
+    }
+
+    .bottom-nav a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 12px;
+      color: #666;
+      transition: color 0.3s ease;
+    }
+
+    .bottom-nav a img {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 5px;
+    }
+
+    .bottom-nav a:hover {
+      color: #388e3c;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 480px) {
+      header {
+        font-size: 20px;
+      }
+      .icon-box img {
+        width: 50px;
+        height: 50px;
+      }
+      .icon-title {
+        font-size: 14px;
+      }
+      .bottom-nav a {
+        font-size: 11px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .icon-box img {
+        width: 40px;
+        height: 40px;
+      }
+      .icon-title {
+        font-size: 12px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .grid {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 50px 20px 90px;
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      .icon-box img {
+        width: 70px;
+        height: 70px;
+      }
+      .icon-title {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 320px) {
+      .bottom-nav a {
+        font-size: 10px;
+      }
+      .bottom-nav a img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>آنستریکس</header>
+
+<div class="grid">
+  <a href="intro.html" class="icon-box">
+    <img src="pic/cd-burning.png" alt="Airway">
+    <div class="icon-title">مقدمه</div> 
+  </a>
+  <a href="classes.html" class="icon-box">
+    <img src="pic/burn.png" alt="Drugs">
+    <div class="icon-title">دسته بندی آسیب های سوختگی</div> 
+  </a>
+  <a href="etiology.html" class="icon-box">
+    <img src="pic/fire.png" alt="Anesthesia">
+    <div class="icon-title">اتیولوژی آسیب‌های سوختگی</div>
+  </a>
+  <a href="treatment.html" class="icon-box">
+    <img src="pic/treatment.png" alt="Fluids">
+    <div class="icon-title">درمان بیماران دچار سوختگی</div>
+  </a>
+  <a href="before.html" class="icon-box">
+    <img src="pic/anesthesia.png" alt="Ventilation">
+    <div class="icon-title">ملاحضات قبل از بیهوشی</div>
+  </a>
+  <a href="during.html" class="icon-box">
+    <img src="pic/heart-rate.png" alt="Monitoring">
+    <div class="icon-title">اقدامات حین بیهوشی</div>
+  </a>
+  <a href="after.html" class="icon-box">
+    <img src="pic/anesthesiology.png" alt="Tracheostomy">
+    <div class="icon-title">اقدامات پس از بیهوشی</div>
+  </a>
+  <a href="restoration.html" class="icon-box">
+    <img src="pic/volunteer.png" alt="Pain Control">
+    <div class="icon-title">فاز ترمیمی</div>
+  </a>
+</div>
+
+<!-- Bottom Navigation -->
+<div class="bottom-nav">
+  <a href="#">
+    <img src="pic/home.png" alt="Home">
+    خانه
+  </a>
+  <a href="profile.html">
+    <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Profile">
+    پروفایل
+  </a>
+  <a href="settings.html">
+    <img src="pic/setting.png" alt="Settings">
+    تنظیمات
+  </a>
+</div>
+
+</body>
+</html>

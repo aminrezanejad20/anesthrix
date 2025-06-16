@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>اتیولوژی آسیب‌های سوختگی</title>
+
+  <!-- فونت‌ها -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tanha&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shabnam&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sahel&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Vazirmatn', sans-serif;
+      background: linear-gradient(to bottom right, #f5f7fa, #c3ecb3);
+      color: #333;
+      padding-bottom: 80px;
+      transition: background 0.3s, color 0.3s, font-family 0.3s;
+    }
+
+    body.dark-mode {
+      background: linear-gradient(to bottom right, #1c1c1c, #2c2c2c);
+      color: #f0f0f0;
+    }
+
+    header {
+      background: #66bb6a;
+      padding: 25px 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    body.dark-mode header {
+      background: #2e7d32;
+    }
+
+    .content-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-item {
+      background: #fff;
+      margin-bottom: 15px;
+      padding: 15px 20px;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .section-item:hover {
+      background: #eefcea;
+    }
+
+    body.dark-mode .section-item {
+      background: #333;
+      color: #eee;
+    }
+
+    body.dark-mode .section-item:hover {
+      background: #444;
+    }
+
+    .section-text {
+      display: none;
+      margin-top: -10px;
+      margin-bottom: 20px;
+      padding: 15px 20px;
+      border-radius: 12px;
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      line-height: 1.8;
+      animation: fadeIn 0.4s ease;
+    }
+
+    body.dark-mode .section-text {
+      background-color: #37474f;
+      color: #a5d6a7;
+    }
+
+    .sub-section {
+      margin-right: 20px;
+      border-right: 3px solid #66bb6a;
+      padding-right: 10px;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: white;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      z-index: 10;
+    }
+
+    body.dark-mode .bottom-nav {
+      background: #2c2c2c;
+    }
+
+    .bottom-nav a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 12px;
+      color: #666;
+      text-decoration: none;
+    }
+
+    body.dark-mode .bottom-nav a {
+      color: #ccc;
+    }
+
+    .bottom-nav a:hover {
+      color: #388e3c;
+    }
+
+    .bottom-nav img {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 480px) {
+      header {
+        font-size: 22px;
+      }
+
+      .section-item {
+        font-size: 16px;
+        padding: 12px 16px;
+      }
+
+      .bottom-nav img {
+        width: 22px;
+        height: 22px;
+      }
+
+      .bottom-nav a {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>اتیولوژی آسیب‌های سوختگی</header>
+
+<div class="content-container">
+  <div class="section-item" onclick="toggleSection('s10')">اتیولوژی آسیب‌های سوختگی</div>
+  <div id="s10" class="section-text">
+    <div class="sub-section">
+      <p>هنگام پذیرش در بخش سوختگی، تیم سوختگی علت آسیب سوختگی و شرایط مربوط به آسیب را تعیین می‌کنند. چهار نوع آسیب سوختگی وجود دارد:</p>
+      <ul>
+        <li><strong>شیمیایی</strong></li>
+        <li><strong>الکتریکی</strong></li>
+        <li><strong>حرارتی/ گرمایی</strong></li>
+        <li><strong>استنشاقی</strong></li>
+      </ul>
+      
+      <h4>سوختگی‌های شیمیایی</h4>
+      <p>معمولاً در آزمایشگاه‌ها یا محیط‌های صنعتی اتفاق می‌افتد. این نوع سوختگی‌ها زمانی رخ می‌دهند که ماده شیمیایی مضر با پوست در تماس باشد. آسیب شیمیایی به‌دنبال واکنش شیمیایی مواد با پروتئین‌های بافت و اجزای سلولی رخ می‌دهد. تا زمانی که ماده شیمیایی از بین نرود یا خنثی نشود، آسیب به پوست ادامه خواهد یافت. درمان اولیه استفاده از آب زیاد (شستشوی بدن با آب) و یا شستشو با نرمال سالین است.</p>
+      
+      <h4>سوختگی‌های الکتریکی</h4>
+      <p>می‌توانند بیشترین آسیب را به پوست و بافت‌های اطراف آن وارد کنند. افرادی که آسیب‌های الکتریکی را تجربه کرده‌اند، ممکن است دچار دیس‌ریتمی‌های قلبی و آسیب به میوکارد شوند. علاوه بر این، سوختگی الکتریکی می‌تواند آسیب جدی به استخوان‌ها، رگ‌های خونی، ماهیچه‌ها و اعصاب وارد کند.</p>
+      
+      <h4>سوختگی‌های حرارتی</h4>
+      <p>سوخگی‌های ناشی از هر منبع حرارتی، معمولاً در داخل و یا اطراف خانه رخ می‌دهد. تقریباً 70% سوختگی‌هایی در افراد زیر 4 سال از نوع اسکالد است، در حالی که سوختگی با شعله، رایج‌ترین الگو در بین کودکان 5 ساله و بالاتر است.</p>
+      
+      <h4>سوختگی استنشاقی</h4>
+      <p>اغلب همراه با سوختگی حرارتی است و تا زمانی که خلاف آن ثابت شود باید به آن مشکوک ‌شویم. آسیب‌های استنشاقی براساس موقعیت‌های آناتومیکی می‌تواند به سه چهار نوع تقسیم شود:</p>
+      <ol>
+        <li><strong>نوع اول:</strong> شامل آسیب‌های راه هوایی فوقانی است که در اثر صدمات حرارتی به دهان، اروفارنکس و حنجره ایجاد می‌شود.</li>
+        <li><strong>نوع دوم:</strong> شامل صدمات راه هوایی تحتانی و آسیب به پارانشیم تراشه، برونشیول‌ها و آلوئول‌های ریه ناشی از مواد شیمیایی و ذرات موجود در دود است.</li>
+        <li><strong>نوع سوم:</strong> شامل خفگی متابولیک است که در آن اجزای خاصی از دود مانند مونوکسیدکربن یا هیدروژن سیانید باعث اختلال در اکسیژن‌رسانی می‌شوند و یا توسط بافت‌ها مصرف می‌شوند. نوع سوم شامل آسیب پارانشیم ریوی میشود.</li>
+        <li><strong>نوع چهارم:</strong> شامل خفگی متابولیک یا سمیت سیستمیک است که در آن ترکیبات دود مانند کربن مونوکسید یا سیانید هیدروژن باعث اختلال در رساندن اکسیژن یا استفاده توسط بافت ها می شود. هر سه چهار نوع آسیب ممکن است در بیمار سوخته وجود داشته باشد.</li>
+      </ol>
+      
+      <p>صدمه به راه هوایی بسته به این‌که آیا راه هوایی فوقانی تحت تأثیر قرار دارد یا تحتانی، ممکن است متغیر باشد. صدمات راه هوایی فوقانی ناشی از استنشاق هوای بیش از حد گرم یا بخار و ترکیبات سمی موجود در دود است. اگر اپی‌گلوت یا حنجره در معرض هوای خشک در دمای 300°C یا بخار در 100°C قرار بگیرد، می‌تواند منجر به تورم شدید و انسداد سریع راه هوایی شود.</p>
+      
+      <p>اضافه شدن یک آسیب استنشاقی به یک سوختگی پوستی میزان مرگ و میر را دو برابر می‌کند هم چنین اندازه زخم سوختگی تعیین‌کننده میزان مرگ و میر است. استنشاق هوای داغ می‌تواند باعث آسیب مستقیم به صورت، اروفارنکس و قسمت فوقانی تراشه شود و راه هوایی تحتانی را نیز تحت تأثیر قرار می‌دهد. تماس راه هوایی تحتانی با هوای گرم می‌تواند صدماتی را ایجاد کند، (زیرا مکانیسم‌های تبادل حرارت در مجاری هوایی برای خنک کردن هوایی که استنشاق شده غیر فعال می‌شود).</p>
+      
+      <p>انسداد راه هوایی فوقانی به دلیل تورم بیش از حد، بزرگی زبان (ماکروگلوسیا) و تورم بافت نرم حلق است. صدمات راه هوایی تحتانی بیشتر ناشی از استنشاق ذرات دود یا مواد شیمیایی (ناشی از آتش‌سوزی) است. در راه هوایی تحتانی، سموم استنشاق شده با مخاط راه هوایی واکنش داده و مواد اسیدی و قلیایی، تشکیل می‌دهند.</p>
+      
+      <h4>علائم هشداردهنده آسیب تنفسی</h4>
+      <ul>
+        <li>خشونت و گرفتگی صدا</li>
+        <li>گلودرد</li>
+        <li>دیسفاژی (اختلال در بلع)</li>
+        <li>هموپتزی (خلط خونی)</li>
+        <li>تاکی‌پنه (افزایش تعداد تنفس در دقیقه)</li>
+        <li>استفاده از عضلات تنفسی فرعی</li>
+        <li>خس‌خس سینه یا ویزینگ</li>
+        <li>بالا رفتن سطح مونوکسیدکربن</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-nav">
+  <a href="index.html">
+    <img src="pic/home.png" alt="خانه">
+    خانه
+  </a>
+  <a href="profile.html">
+    <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="پروفایل">
+    پروفایل
+  </a>
+  <a href="settings.html">
+    <img src="pic/setting.png" alt="تنظیمات">
+    تنظیمات
+  </a>
+</div>
+
+<script>
+  function toggleSection(id) {
+    const section = document.getElementById(id);
+    section.style.display = section.style.display === "block" ? "none" : "block";
+  }
+
+  window.onload = function () {
+    if (localStorage.getItem("darkMode") === "true") {
+      document.body.classList.add("dark-mode");
+    }
+    const savedFont = localStorage.getItem("selectedFont") || "Vazirmatn";
+    document.body.style.fontFamily = '${savedFont}', sans-serif;
+  };
+</script>
+</body>
+</html>

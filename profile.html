@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>آنستریکس</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet">
+  <script src="settings.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Vazirmatn", sans-serif;
+      background: linear-gradient(to bottom right, #f5f7fa, #c3ecb3);
+      color: #333;
+      padding-bottom: 100px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background: #66bb6a;
+      padding: 25px 20px;  /* padding جانبی هم اضافه کردم */
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      line-height: 1.3;   /* اضافه کردن line-height برای بهبود ارتفاع متن */
+      white-space: nowrap; /* جلوگیری از شکست خط */
+      overflow: hidden;    /* مخفی کردن overflow احتمالی */
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+
+    .profile-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #89e17d;
+      margin-bottom: 20px;
+      transition: border-color 0.3s;
+    }
+
+    .user-name {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .user-email {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 30px;
+      transition: color 0.3s;
+    }
+
+    .profile-item {
+      background: #fff;
+      margin: 10px 0;
+      padding: 15px 20px;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      font-size: 17px;
+      text-align: right;
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 20px;
+      width: 260px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      text-align: right;
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 18px;
+      color: #444;
+      transition: color 0.3s;
+    }
+
+    .progress-bar {
+      background-color: #e0e0e0;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 20px;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .progress {
+      height: 100%;
+      width: 87%;
+      background-color: #4caf50;
+      text-align: center;
+      color: #fff;
+      font-size: 13px;
+      line-height: 20px;
+      transition: background-color 0.3s;
+    }
+
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: white;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      z-index: 10;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+
+    .bottom-nav a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 12px;
+      color: #666;
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .bottom-nav a img {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 5px;
+      transition: filter 0.3s;
+    }
+
+    .bottom-nav a:hover {
+      color: #388e3c;
+    }
+
+    @media (max-width: 480px) {
+      header {
+        font-size: 22px;
+      }
+
+      .user-name {
+        font-size: 20px;
+      }
+
+      .user-email {
+        font-size: 14px;
+      }
+
+      .profile-item {
+        font-size: 15px;
+        padding: 12px 16px;
+      }
+
+      .bottom-nav img {
+        width: 22px;
+        height: 22px;
+      }
+
+      .bottom-nav a {
+        font-size: 12px;
+      }
+
+      .card {
+        width: 100%;
+      }
+    }
+
+    /* -------- Dark Mode -------- */
+
+    body.dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+
+    body.dark-mode header {
+      background: #1e8e3e;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+      color: #ddd;
+    }
+
+    body.dark-mode .profile-pic {
+      border-color: #a5d6a7;
+    }
+
+    body.dark-mode .user-email {
+      color: #aaa;
+    }
+
+    body.dark-mode .profile-item,
+    body.dark-mode .card {
+      background: #222;
+      color: #ccc;
+      box-shadow: 0 6px 15px rgba(255, 255, 255, 0.05);
+    }
+
+    body.dark-mode .card h3 {
+      color: #ccc;
+    }
+
+    body.dark-mode .progress-bar {
+      background-color: #444;
+    }
+
+    body.dark-mode .progress {
+      background-color: #81c784;
+      color: #222;
+    }
+
+    body.dark-mode .bottom-nav {
+      background: #222;
+      box-shadow: 0 -2px 8px rgba(255, 255, 255, 0.1);
+    }
+
+    body.dark-mode .bottom-nav a {
+      color: #bbb;
+    }
+
+    body.dark-mode .bottom-nav a:hover {
+      color: #a5d6a7;
+    }
+  </style>
+</head>
+<body>
+
+<header>پروفایل کاربری</header>
+
+<div class="profile-container">
+  <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="User Photo" class="profile-pic">
+  <div class="user-name">فاطمه مهدی پور</div>
+  <div class="user-email">FatemehMehdipour@gmail.com</div>
+
+  <div class="profile-item">📱 شماره همراه: 09112475980</div>
+  <div class="profile-item">👩🏻‍⚕️ نقش کاربری: کارشناس بیهوشی</div>
+  <div class="profile-item">📅 آخرین ورود: 1403/03/08</div>
+
+  <!-- کارت‌های گرافیکی -->
+  <div class="card-container">
+    <div class="card">
+      <h3>⏱ زمان مطالعه هفتگی</h3>
+      <p>۴ ساعت و ۳۰ دقیقه</p>
+    </div>
+
+    <div class="card">
+      <h3>📚 تعداد دوره‌های گذرانده‌شده</h3>
+      <p>۱۲ دوره</p>
+    </div>
+
+    <div class="card">
+      <h3>🏅 سطح کاربری</h3>
+      <p>پیشرفته</p>
+    </div>
+
+    <div class="card">
+      <h3>⭐ امتیاز کاربری</h3>
+      <div class="progress-bar">
+        <div class="progress">870</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bottom Navigation -->
+<div class="bottom-nav">
+  <a href="index.html">
+    <img src="pic/home.png" alt="Home">
+    خانه
+  </a>
+  <a href="profile.html">
+    <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Profile">
+    پروفایل
+  </a>
+  <a href="settings.html">
+    <img src="pic/setting.png" alt="Settings">
+    تنظیمات
+  </a>
+</div>
+
+<script>
+  // بازیابی تنظیمات دارک مود و فونت
+  window.onload = function () {
+    if (localStorage.getItem("darkMode") === "true") {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+
+    const savedFont = localStorage.getItem("selectedFont") || "Vazirmatn";
+    document.body.style.fontFamily = `'${savedFont}', sans-serif`;
+  };
+</script>
+
+</body>
+</html>

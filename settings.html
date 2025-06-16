@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>آنستریکس</title>
+  
+  <!-- فونت‌ها -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tanha&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shabnam&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sahel&display=swap" rel="stylesheet">
+
+  <script src="settings.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Vazirmatn', sans-serif;
+      background: linear-gradient(to bottom right, #f5f7fa, #c3ecb3);
+      color: #333;
+      padding-bottom: 80px;
+      transition: background 0.3s, color 0.3s, font-family 0.3s;
+    }
+
+    body.dark-mode {
+      background: linear-gradient(to bottom right, #1c1c1c, #2c2c2c);
+      color: #f0f0f0;
+    }
+
+    header {
+      background: #66bb6a;
+      padding: 25px 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    body.dark-mode header {
+      background: #2e7d32;
+    }
+
+    .settings-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .setting-item {
+      background: #fff;
+      margin-bottom: 15px;
+      padding: 15px 20px;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      font-size: 18px;
+      font-weight: 500;
+      cursor: default;
+    }
+
+    .setting-item:hover {
+      background: #eefcea;
+    }
+
+    body.dark-mode .setting-item {
+      background: #333;
+      color: #eee;
+    }
+
+    body.dark-mode .setting-item:hover {
+      background: #444;
+    }
+
+    .setting-item[onclick] {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    #about-text {
+      display: none;
+      margin-top: -10px;
+      margin-bottom: 20px;
+      padding: 15px 20px;
+      border-radius: 12px;
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      line-height: 1.8;
+      animation: fadeIn 0.4s ease;
+    }
+
+    body.dark-mode #about-text {
+      background-color: #37474f;
+      color: #a5d6a7;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    select#font-selector {
+      margin-top: 10px;
+      padding: 8px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 100%;
+      font-family: inherit;
+    }
+
+    body.dark-mode select#font-selector {
+      background-color: #444;
+      color: #eee;
+      border: 1px solid #666;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: white;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      z-index: 10;
+    }
+
+    body.dark-mode .bottom-nav {
+      background: #2c2c2c;
+    }
+
+    .bottom-nav a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 12px;
+      color: #666;
+      text-decoration: none;
+    }
+
+    body.dark-mode .bottom-nav a {
+      color: #ccc;
+    }
+
+    .bottom-nav a:hover {
+      color: #388e3c;
+    }
+
+    .bottom-nav img {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 480px) {
+      header {
+        font-size: 22px;
+      }
+
+      .setting-item {
+        font-size: 16px;
+        padding: 12px 16px;
+      }
+
+      .bottom-nav img {
+        width: 22px;
+        height: 22px;
+      }
+
+      .bottom-nav a {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>تنظیمات نرم افزار</header>
+
+<div class="settings-container">
+  <div class="setting-item">ویرایش پروفایل کاربری</div>
+
+  <div class="setting-item">
+    تغییر فونت:
+    <select id="font-selector" onchange="changeFont(this.value)">
+      <option value="Vazirmatn">Vazirmatn</option>
+      <option value="Tanha">Tanha</option>
+      <option value="Shabnam">Shabnam</option>
+      <option value="Sahel">Sahel</option>
+    </select>
+  </div>
+
+  <div class="setting-item" onclick="toggleAbout()">درباره برنامه</div>
+  <div id="about-text">
+    این اپلیکیشن برای آموزش و پشتیبانی از دانشجویان و کارشناسان هوشبری طراحی شده است. هدف آن فراهم‌کردن بستری کاربردی برای مدیریت یادگیری، دسترسی به منابع آموزشی و ارتقاء مهارت‌های بالینی در حوزه بیهوشی است.
+  </div>
+
+  <div class="setting-item" onclick="toggleDarkMode()">🌓 حالت تاریک / روشن</div>
+  <div class="setting-item" onclick="location.href='login.html';" style="cursor:pointer;">خروج از برنامه</div>
+
+</div>
+
+<div class="bottom-nav">
+  <a href="index.html">
+    <img src="pic/home.png" alt="خانه">
+    خانه
+  </a>
+  <a href="profile.html">
+    <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="پروفایل">
+    پروفایل
+  </a>
+  <a href="settings.html">
+    <img src="pic/setting.png" alt="تنظیمات">
+    تنظیمات
+  </a>
+</div>
+
+<script>
+  function toggleDarkMode() {
+    const isDark = document.body.classList.toggle("dark-mode");
+    localStorage.setItem("darkMode", isDark);
+  }
+
+  function toggleAbout() {
+    const about = document.getElementById("about-text");
+    about.style.display = about.style.display === "block" ? "none" : "block";
+  }
+
+  function changeFont(fontName) {
+    document.body.style.fontFamily = `'${fontName}', sans-serif`;
+    localStorage.setItem("selectedFont", fontName);
+  }
+
+  // بازیابی وضعیت‌ها از localStorage
+  window.onload = function () {
+    if (localStorage.getItem("darkMode") === "true") {
+      document.body.classList.add("dark-mode");
+    }
+
+    const savedFont = localStorage.getItem("selectedFont") || "Vazirmatn";
+    document.body.style.fontFamily = `'${savedFont}', sans-serif`;
+    document.getElementById("font-selector").value = savedFont;
+  };
+</script>
+  <script src="settings.js"></script>
+</body>
+</html>

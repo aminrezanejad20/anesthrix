@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>آنستریکس</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="settings.js"></script>
+  <style>
+    /* استایل‌های قبلی‌ات را اینجا بذار */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Vazirmatn", sans-serif;
+      background: linear-gradient(to bottom right, #eef9f1, #d5f0c1);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    .login-container {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 25px;
+      font-weight: 600;
+      color: #66bb6a;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #d5d5d5;
+      border-radius: 12px;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      border-color: #66bb6a;
+      outline: none;
+    }
+
+    button {
+      margin-top: 25px;
+      background-color: #66bb6a;
+      color: white;
+      border: none;
+      padding: 12px 0;
+      width: 100%;
+      border-radius: 14px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-family: vazirmatn;
+    }
+
+    button:hover {
+      background-color: #558b4d;
+    }
+
+    .forgot-password {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #555;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .forgot-password:hover {
+      color: #66bb6a;
+    }
+
+    @media (max-width: 480px) {
+      .login-container {
+        padding: 25px 20px;
+      }
+      input[type="text"],
+      input[type="password"] {
+        font-size: 14px;
+      }
+      button {
+        font-size: 16px;
+      }
+    }
+
+    .error-message {
+      color: red;
+      margin-top: 15px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>ورود به حساب کاربری</h1>
+    <form id="loginForm">
+      <label for="username">نام کاربری</label>
+      <input type="text" id="username" name="username" required autocomplete="username" />
+
+      <label for="password">رمز عبور</label>
+      <input type="password" id="password" name="password" required autocomplete="current-password" />
+
+      <button type="submit">ورود</button>
+    </form>
+    <div class="error-message" id="errorMsg"></div>
+
+    <div class="forgot-password" onclick="alert('بخش بازیابی رمز هنوز فعال نشده')">
+      فراموشی رمز عبور؟
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const errorMsg = document.getElementById('errorMsg');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // جلوگیری از ارسال فرم بصورت پیشفرض
+
+      const username = form.username.value.trim();
+      const password = form.password.value.trim();
+
+      if(username === "FatemehMehdipour" && password === "123456") {
+        // اگر یوزرنیم و پسورد درست بود برو صفحه index.html
+        window.location.href = 'index.html';
+      } else {
+        // اگر اشتباه بود پیام خطا نمایش بده
+        errorMsg.textContent = "نام کاربری یا رمز عبور اشتباه است.";
+      }
+    });
+  </script>
+</body>
+</html>
